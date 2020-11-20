@@ -11,12 +11,11 @@ public class TicTacToeOOP {
             while (!b.gameOver()) {
                 System.out.print("Player " + turn + "'s turn: ");
                 String rawInput = uInput.next();
+                if(rawInput.length() != 2) continue;
                 char column = rawInput.charAt(0);
                 int row = rawInput.charAt(1) - '0';
+                if(b.letterToInt(column) < 0 || row < 0 || !b.changePosition(column, row, turn)) continue;
 
-                if (!b.changePosition(column, row, turn)) {
-                    continue;
-                }
                 turns++;
 
                 turn = (turn == 'X' ? 'O' : 'X');

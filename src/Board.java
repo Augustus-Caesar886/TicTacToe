@@ -68,7 +68,7 @@ public class Board {
         return true;
     }
 
-    int letterToInt(char column) {
+    public int letterToInt(char column) {
         switch(column) {
             case 'A':
                 return 0;
