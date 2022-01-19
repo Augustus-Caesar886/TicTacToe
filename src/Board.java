@@ -61,11 +61,7 @@ public class Board {
             return true;
         }
 
-        for(Cell c : board) {
-            if(c.getVal() == ' ') return false;
-        }
-
-        return true;
+        return false;
     }
 
     public int letterToInt(char column) {

@@ -8,7 +8,7 @@ public class TicTacToeOOP {
             b.drawBoard();
             char turn = 'X';
             int turns = 0;
-            while (!b.gameOver()) {
+            while (!b.gameOver() && turns < 9) {
                 System.out.print("Player " + turn + "'s turn: ");
                 String rawInput = uInput.next();
                 if(rawInput.length() != 2) continue;
@@ -21,7 +21,7 @@ public class TicTacToeOOP {
                 turn = (turn == 'X' ? 'O' : 'X');
                 b.drawBoard();
             }
-            if (turns < 9) {
+            if (b.gameOver()) {
                 System.out.println("Player " + (turn == 'X' ? 'O' : 'X') + " wins!");
             } else {
                 System.out.println("Stalemate!");
